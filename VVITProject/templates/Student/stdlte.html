@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}St Delete{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card col-md-4 shadow-lg border border-success mx-auto">
+        <div class="card-body">
+            <h3>Delete Record</h3>
+            <h5>Are you sure want to delete <p class="badge badge-info">{{c.srn}}</p>?</h5>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'std' %}" class="btn btn-outline-danger form-control">Back</a>
+                    </div>
+                    <div class="col">                          
+                        <input type="Submit" value="Yes Confirm" class="btn btn-outline-success form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

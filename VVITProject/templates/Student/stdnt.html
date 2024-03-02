@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}StudentApp{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col">
+            {% if messages %}
+            {% for i in messages %}
+            <div class="alert alert-{{i.tags}} alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{i}}
+              </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="card col-md-4 shadow-lg border border-success ml-2 h-100">
+            <div class="card-body">
+                <h3>Add Student</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    {% for i in v %}
+                    {{i}}
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col">
+                            <input type="reset" value="Clear" class="btn btn-outline-danger form-control"> 
+                        </div>
+                        <div class="col">
+                            <input type="submit" value="Create" class="btn btn-outline-success form-control">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card col shadow-lg border border-danger ml-2 h-100">
+            <div class="card-body">
+                <h3>Student Data</h3>
+                <table class="table table-borderless table-hover table-striped">
+                    <tr class="bg-dark text-light">
+                        <th>Sno</th>
+                        <th>Roll Number</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    {% for i in h %}
+                    <tr>
+                        <td>
+                            {{forloop.counter}}
+                        </td>
+                        <td>
+                            {{i.srn}}
+                        </td>
+                        <td>
+                            {{i.sname}}
+                        </td>
+                        <td>
+                            <a href="{% url 'stdnup' i.id %}" class="form-control col-sm-5 btn btn-outline-info">Edit</a>
+                            <a href="{% url 'stdd' i.id %}" class="form-control col-sm-5 btn btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

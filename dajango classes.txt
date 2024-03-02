@@ -1,0 +1,11 @@
+python -v
+pip -V
+python -m pip install --upgrade pip
+pip -V
+pip install django==3.2
+django-admin --verison
+>django-admin startproject SampleProject
+>py manage.py
+>py manage.py runserver
+run server using https(address provided)
+>py manage.py startapp TestApp

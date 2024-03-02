@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Std Update{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card col-md-4 shadow-lg border border-warning mx-auto">
+        <div class="card-body">
+            <h3>Update Record</h3>
+            <form method="post">
+                {% csrf_token %}
+                {% for j in d %}
+                {{j}}
+                {% endfor %}
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'std' %}" class="btn btn-outline-secondary form-control">Back</a>
+                    </div>
+                    <div class="col">
+                        <input type="submit" vlaue="Update" class="btn btn-outline-success form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

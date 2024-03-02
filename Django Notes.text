@@ -1,0 +1,366 @@
+Web Development Using Django for 3rd year
+
+Day-01[14-02-2024]:
+===================
+  - Python Downloads,Installation and Configuration
+  - Python and pip version check,pip upgrade
+  - Django installation and version check
+  - Project and UserApp Creation, Overview of files existing in Admin app and User app
+  - Http Request and Response with string data
+  - HttpResponse with html and css styling
+  - Dynamic Url Mapping with single and n parameters
+
+Day-01[14-02-2023]:
+===================
+	Good Afternoon All..
+
+	Python Downloads:
+    =================
+    > Open browser and search for "python.org" at first it displays "https://python.org" click on the link to proceed for the site
+    > It displays some options in navbar we need to place a cursor on "Downloads" and it diplays some other dropdown options like to select operating systems such as "windows,all,mac and linux etc.,"
+    > We need to select the operating system then it navigates to another page for selecting the releases
+    > In Python we can observe 2 versions such as
+        - python 2.x
+        - python 3.x
+        We use python 3.x because some of the packages and modules are predefined in it but not in python 2.x 
+    > In that page it will displays 2 releases such as
+        - Stable Release [Developed for users purpose]
+        - Pre Release [Still need to develop it is for developers purpose]
+    > If we need to download particular version of python like python 3.7 or 3.9 we need to search in browser for that we need to press "cntrl + f" and need to search as "python 3.x" etc., based on your requirement
+    > It displays some options in it but we need to select on stable release only.
+        - help file
+        - x86-64 embedded zip file
+        - x86-64 executeable file
+        - x86-64 web based installer
+        - x86 embedded zip file
+        - x86 executeable file
+        - x86 web based installer
+        ** help file => Based on developers help it will run the codes
+        ** embedded zip file => Already installed files so those files are compressed to use in systems without installation on your systems
+        ** executeable => Only for windows users to install in your local systems
+        ** web based installer => It can be installed through internet and downloads will be upgraded for each time if the updates are done for it. 
+    > In these options first we need to check system bit type either 32 or 64 bit operating system. If it is 64 then we need to download "windows x86-64 executeable installer" if 32 then we need to download "windows x86 executeable installer". Windows software extensions will be either ".exe or .msi" files.
+    > Click on the selected files based on your system bit then it will downloads the software in your local system.
+
+    Python Installation:
+    ====================
+    > After Downloading the python software we need to double tap on it then and ask permissions to allow the software to install in your local system we need to tap "yes" to proceed for it.
+    > It will displays 2 options and 2 checkboxes such as
+        2 checkboxes:
+        =============
+            - Install for all users
+            - Add python 3.x to path
+            > For all users we need to access python then we need to check first option
+            > We need to set a path by default in environment variable path then we need to select this option. If not then it displays an error in "command prompt" while accessing python
+
+        2 options:
+        ==========
+            - install now [Default path]
+            - customize installation [User selected path]
+        > While clicking on "install now" by default it automatically allocates to the path such as "c:/users/username/AppData/Local/Programs/Python/Python3x/".
+            Here python will be installed if we select this option while installing it
+        > Custom installation is user defined location path like c drive or d drive or etc., in that location the python will be installed but we need to select the "Add python 3.x to path" if not the python interpreter will not work in command prompt
+
+    Python Version Check or Checking whether it is installed in local machine or not?
+
+	Python Version Check:
+	=====================
+		- cmd
+		- python -V
+
+	Pip:
+    ====
+    > Pip is used to install third party packages related to python such as jupyter notebook,numpy,pandas,matplotlib and some machine learning packages
+    > First we need to check the pip version by using the command in command prompt such as
+        => pip -V
+    > To install jupyter notebook we need to open the command prompt then we need to type the command such as
+        Syntax:
+        -------
+            - cmd
+            - pip install <packagename>
+
+    Pip Upgrade:
+    ============
+    > open command prompt and then need to type command such as
+        => python -m pip install --upgrade pip
+        It will upgrades the pip from lower version to updated version
+    > After upgrading the pip we need to install the jupyter notebook again because the latest packages and libraries will be update to local system
+
+	Django Installation:
+	====================
+		- cmd
+		- pip install django==3.2
+					or 
+		  pip install django [Latest Version]
+
+	Django Version check:
+	=====================
+		- cmd
+		- django-admin --version
+
+	Creation of Project:
+    ====================
+        - Choose a location in local machine where we need to create a project
+        - Open command prompt from that location
+        - Command for Creating project
+            => django-admin startproject "Project name"
+        - Project is created with project name
+        - Inside of project we can observe the same project name folder
+            => This folder will be considered as "Admin App"
+        Ex:
+           django-admin startproject SampleProject
+           => SampleProject => [Project Folder]
+            => SampleProject => [Admin App]
+            => manage.py => service file to run a project
+    
+    Execution of Project:
+    ======================
+        - Navigate to the path where manage.py file is existing through command prompt
+        - cmd
+            => python manage.py runserver
+            => py manage.py runserver
+            => manage.py runserver
+        - Try to open browser and type the ip address existing in command prompt
+            => localhost = 127.0.0.1
+            => Default port Number for Django is 8000
+        - localhost:8000 or 127.0.0.1:8000
+        - We can observe the project is running Fine with default settings
+
+    Stopping a Server:
+    ==================
+        - cmd
+        - cntrl + c [Exits from server]
+
+	Admin App Folder Overview:
+    ==========================
+        - init => It will be considered as python file
+        - asgi => Asynchronous Gate Way Interface [Project Deployment] 
+        - wsgi => Web server Gateway Interface [Project Deployment]
+        - urls => To check the url name is existing in the project or not
+        - settings => All configurations [app,css,html,audio,video,email,images]
+
+    UserApp Creation:
+    =================
+        - cmd
+        - py manage.py startapp "appname"
+            - py manage.py startapp TestApp
+
+    User App Overview:
+	==================
+		- migrations => Table Creations [Inheritance]
+		- init => Interpreter just to consider this as python file
+		- admin => User tables,List format => For admin access
+		- apps => Application Configuration
+		- models => Table Creation,fields,datatype => Database 
+		- tests => Unit/black box testing
+		- views => Logic, Functions to access, Actions
+
+	Concepts:
+	---------
+		- HttpRequest and Response with string data
+		- HttpResponse with html tag and css styling
+		- Dynamic url mapping with single and n parameters
+		- Interface between controllers
+
+	Task:
+	=====
+		Python Concepts:
+		----------------
+			- Function argument types
+			- Packages and Modules
+			- OOPS Concepts [class,method,object,constructor types,inheritance types]
+
+		HTML:
+		-----
+			- Inline and blocked elements
+			- Form controls [input types]
+
+		Django:
+		-------
+			- Introduction to Django
+			- Hstory,advantages and disadvantages
+			- Applications of Django
+			- Differences between MVC and MVT
+			
+
+Day-02[15-02-2024]:
+===================
+  - Template Creation, data rendering from template to controller and then controller to another template
+  - Interface between controller and template
+  - DTL langauge for accessing a varialbe value in template
+  - Static File handling, accessing css file to a template with an example
+  - Model Creation,makemigrations,migrate,Model Queries in a shell
+  - CRUD Operations by using ORM Queries with sample example on each
+  - Bootstrap-4 grid system,container,card,buttons,color and form controls with sample examples on each 
+
+
+Day-02[15-02-2023]:
+===================
+	Good Morning All..
+    
+    Concepts:
+    =========
+        - Static File Handling [Accessing external css file]
+        - Data rendering from template to controller and then controller to another template
+        - DTL language for accessing a variable value
+        - Model Creation,makemigrations,migrate and ORM
+        - Model queries in a shell
+        - CRUD Operations by using ORM Queries
+        - Bootstrap-4 cards,container,buttons,grid system,form-controls and colors etc.,
+
+    Shell:
+    ======
+        - cmd where manage.py exists
+        - py manage.py shell
+        - import the class name to a shell
+        - from packagename.modulename import classname
+            Ex:
+                from TestApp.models import Emp
+
+    CRUD Operations:
+    ================
+        C => Create
+        R => Read/Retrieve
+        U => Update
+        D => Delete
+
+    Create:
+    =======
+        - save
+        - create
+
+        save:
+        =====
+            => objectname = classname(fieldname="value")
+            => objectname.save()
+        create:
+        =======
+            => objectname = classname.objects.create(fieldname="value")
+            => Here no need to save the ata because the create method automatically stores the data in database
+
+        Note: => So to insert n number of records at an single object then we can use bulk_create
+
+    Read/Retrieve:
+    ==============
+        - get
+        - filter
+        - all
+        - first
+        - last
+
+        get:
+        ====
+            = It should be used only for Unique values
+            = If the value is not existing or accessing n number of records it displays an error
+            => Ex: objectname = classname.objects.get(fieldname="value")
+
+        filter:
+        =======
+            = It access duplicate value records 
+            = If the record is not existing in the database it stores empy query set list
+            => Ex: objectname = classname.objects.filter(fieldname="value")
+            => To display all record values we need to use the iteration.
+            => for iterationvariablename in objectname:
+                print(iterationvariablename.fieldname)
+
+        all:
+        ====
+            = It access all the records from the database
+            => Ex: objectname = classname.objects.all()
+            = To display all the records we need to use iteration
+            => for iterationvariablename in objectname:
+                print(iterationvariablename.fieldname)
+
+        first:
+        ======
+            = It access the first record value in the table
+            = Ex: objectname = classname.objects.first()
+
+        last:
+        =====
+            = It access the last record value in the table
+            = Ex: objectname = classname.objects.last()
+
+    Update:
+    =======
+        - get :: save
+        - filter, all :: update
+
+        get:
+        ====
+            = We need to access a unique record value first we need to access the record and need to fix the updated value
+            = Ex: objectname = classname.objects.get(fieldname="value")
+            = objectname.fieldname = newvalue
+            = objectname.save()
+
+        filter:
+        =======
+            = We need to update the duplicate record value fields then we need to prefer the update method and here no need to use the save method
+            = Ex: objectname = classname.objects.filter(fieldname="value")
+            = objectname.update(fieldname="newvalue")
+
+            Note: Similarly for all records we need to update entire column value then we prefer all and update method
+
+    Delete:
+    =======
+        - get
+        - filter
+        - all
+
+        get:
+        ====
+            = We need to delete the unique record value then we need to use get
+            = Ex: objectname = classname.objects.get(fieldname="value")
+            = objectname.delete()
+                                or
+            = objectname = classname.objects.get(fieldname="value").delete()
+
+        filter:
+        =======
+            = We need to delete the duplicate record of some field value
+            = Ex: objectname = classname.objects.filter(fieldname="value")
+            = objectname.delete()
+                                or
+            = objectname = classname.objects.filter(fieldname="value").delete()
+
+        all:
+        ====
+            = We need to delete all record values
+            = Ex: objectname = classname.objects.all(fieldname="value")
+            = objectname.delete()
+                                or
+            = objectname = classname.objects.all(fieldname="value").delete()
+
+    Task:
+    =====
+        Python:
+        -------
+            - OOPS concepts like class,object,method,constructor and its types,inheritance and its types
+            - Package and modules with oops concepts
+
+        Bootstrap-4:
+        ------------
+            - Alerts,jumbotron,buttons,grid system
+            - Cards,table,images,color
+
+# VVIT-CSMC-AIML
+Web Development Using Django for 3rd year
+
+
+
+Day-03[16-02-2024]:
+===================
+  - CRUD Operations in basic procedure by using templates
+  - Template blocks,DTL language for variable,conditional statements,loops with sample example on each
+
+Day-03[16-02-2023]:
+===================
+	Good Morning All..
+
+    Concepts:
+    =========
+        - CRUD Operations by using basic procedure through template
+        - Template Blocks, DTL language for variable,conditional statements and loops
+
+
+https://github.com/AP-Skill-Development-Corporation/VVIT-2024-Batch-1

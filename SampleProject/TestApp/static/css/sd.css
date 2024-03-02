@@ -1,0 +1,21 @@
+h3
+{
+	margin-left: 30%;
+    margin-right: 30%;
+    border: solid green 1px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px 25px 25px 10px;
+}
+form
+{
+	border: solid blue 1px;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding: 10px;
+	border-radius: 10px;
+}
+#m 
+{
+	float:right;
+}
